@@ -1,35 +1,22 @@
 abstract class SpeechState {}
 
-class SpeechInitial extends SpeechState {}
-class SpeechListening extends SpeechState {}
-class SpeechProcessing extends SpeechState {}
-class SpeechResult extends SpeechState {
+class InitialState extends SpeechState {}
+
+class ListeningState extends SpeechState {}
+
+class ProcessingState extends SpeechState {
+  final String spokenText;
+  ProcessingState(this.spokenText);
+}
+
+class ResultState extends SpeechState {
   final String name;
   final String phone;
-  final String text;
-  SpeechResult({required this.name, required this.phone, required this.text});
+  final String originalText;
+  ResultState(this.name, this.phone, this.originalText);
 }
-class SpeechError extends SpeechState {
+
+class ErrorState extends SpeechState {
   final String message;
-  SpeechError(this.message);
+  ErrorState(this.message);
 }
-
-// abstract class SpeechState {}
-
-// class SpeechInitial extends SpeechState {}
-
-// class SpeechListening extends SpeechState {}
-
-// class SpeechLoading extends SpeechState {}
-
-// class SpeechResult extends SpeechState {
-//   final String originalText;
-//   final String name;
-//   final String phone;
-//   SpeechResult(this.originalText, this.name, this.phone);
-// }
-
-// class SpeechError extends SpeechState {
-//   final String message;
-//   SpeechError(this.message);
-// }

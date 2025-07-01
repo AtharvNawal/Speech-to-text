@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://192.168.1.84:8000/extract'; // Change IP if needed
+  // static const String baseUrl = 'http://192.168.1.84:8000/extract'; // Change IP if needed
+  static const String baseUrl = 'https://speech-to-text-backend-igpr.onrender.com/extract'; // Change IP if needed
 
 
   static Future<Map<String, dynamic>> extractEntities(String text) async {

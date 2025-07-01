@@ -44,6 +44,7 @@ def extract_phone(text: str):
 
 @app.post("/extract")
 async def extract_entities(input_text: InputText):
+    #print(f"Received: {data.text}")
     original = input_text.text
     translated = translate_to_english(original)
 
